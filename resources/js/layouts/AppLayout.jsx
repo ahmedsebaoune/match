@@ -13,7 +13,7 @@ import LaLiga from "../tables/laLiga";
 import ChampionsLeague from "../tables/championsLeague";
 
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/css/skyblue';
 
 export default function AppLayout({children}) {
     const {name: pl, table: plTable} = PremierLeague();
