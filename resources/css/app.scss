@@ -1,0 +1,125 @@
+// @import "../plFont.ttf";
+$cryan: #00f0fb;
+$pink: #56157d;
+$green: #00ff85;
+$purple: #7d2bcb;
+$font-path : "../fonts";
+@font-face {
+  font-family: "pl";
+  src: url('#{$font-path}/plFont.ttf');
+}
+@font-face {
+  font-family: "champions";
+  src: url('#{$font-path}/Champions.ttf');
+}
+@font-face {
+  font-family: "laligaBold";
+  src: url('#{$font-path}/laligaBold.ttf');
+}
+@font-face {
+  font-family: "laliga";
+  src: url('#{$font-path}/laliga.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  color: white;
+  font-family: "pl";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.inner {
+      width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: red;
+    clip-path: inset(0 24% 19% 19% round 0 0 20px 20px);
+    .content{
+        position: absolute;
+        left: 19%;
+        right: 24%;
+        height: 81vh;
+        background: #00ff85;
+    }
+}
+
+.table {
+  font-size: 20px;
+  width: 100%;
+  justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .beforeTab{
+        width:80%;
+    }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    caption {
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      vertical-align: center;
+      height: 40px;
+    }
+    display: table;
+    tr {
+      height: 40px;
+    }
+    th {
+        padding: 0 10px;
+      font-size: 18px;
+      font-weight: 100;
+    }
+    td {
+      font-weight: 200;
+    }
+    tr:last-child {
+      th,
+      td {
+        border: none;
+      }
+    }
+  }
+}
+
+// .hide {
+//   // display: none !important;
+//   animation-name: sliderToRight;
+//   animation-duration: 1s;
+//   animation-fill-mode: backwards;
+// }
+// .show {
+//   animation-name: sliderToLeft;
+//   animation-duration: 1s;
+// }
+
+@keyframes sliderToLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes sliderToRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(+120%);
+  }
+}
+@import "styles/groups";
+@import "styles/container";
+@import "styles/tables";

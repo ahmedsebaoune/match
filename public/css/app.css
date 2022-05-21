@@ -1,1 +1,484 @@
+@font-face {
+  font-family: "pl";
+  src: url(/fonts/plFont.ttf?68fee4744fa9cb92c7a93f1879ab5962);
+}
+@font-face {
+  font-family: "champions";
+  src: url(/fonts/Champions.ttf?57b7551df03a20bed65e6413ea115b35);
+}
+@font-face {
+  font-family: "laligaBold";
+  src: url(/fonts/laligaBold.ttf?0e024d0ee78669d437b25a5cf875d7ca);
+}
+@font-face {
+  font-family: "laliga";
+  src: url(/fonts/laliga.ttf?403f49d3a68c1240a81c49ef372586c4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.App {
+  color: white;
+  font-family: "pl";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: red;
+  -webkit-clip-path: inset(0 24% 19% 19% round 0 0 20px 20px);
+          clip-path: inset(0 24% 19% 19% round 0 0 20px 20px);
+}
+.inner .content {
+  position: absolute;
+  left: 19%;
+  right: 24%;
+  height: 81vh;
+  background: #00ff85;
+}
+
+.table {
+  font-size: 20px;
+  width: 100%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.table .beforeTab {
+  width: 80%;
+}
+.table table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+}
+.table table caption {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  vertical-align: center;
+  height: 40px;
+}
+.table table tr {
+  height: 40px;
+}
+.table table th {
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: 100;
+}
+.table table td {
+  font-weight: 200;
+}
+.table table tr:last-child th,
+.table table tr:last-child td {
+  border: none;
+}
+
+@-webkit-keyframes sliderToLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes sliderToLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes sliderToRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+@keyframes sliderToRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+.groups {
+  font-family: "champions";
+  background-position: top;
+  background-size: cover;
+  font-size: 18px;
+  letter-spacing: 2px;
+  height: 100vh;
+}
+.groups h2 {
+  height: 20px;
+}
+.groups table {
+  background-color: rgba(4, 10, 45, 0.4);
+  width: 80%;
+  height: 15vh;
+}
+.groups table caption {
+  text-align: start;
+  padding: 1%;
+}
+.groups table tbody {
+  position: relative;
+}
+.groups table tbody::before {
+  content: "";
+  position: absolute;
+  top: -2%;
+  left: 0%;
+  bottom: 100%;
+  right: 0%;
+  background: rgb(19, 42, 210);
+  background: linear-gradient(90deg, rgb(19, 42, 210) 0%, rgb(72, 163, 246) 51%, rgb(129, 242, 255) 100%);
+}
+.groups table th,
+.groups table td {
+  padding: 5px 0;
+}
+
+.container {
+  background: url(/images/championsleagueBack.png?2106cc69fbe3f89312ac71f18b4da4e1);
+  background: url(/images/premierleagueBack.jpg?7f5875ec6909d14ce3d8df530046d233);
+  transition: 1s all ease;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 0, 75% 0, 75% 80%, 20% 80%, 20% 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 0, 75% 0, 75% 80%, 20% 80%, 20% 100%, 100% 100%, 100% 0%);
+  shape-outside: polygon(20% 0%, 20% 75%, 80% 75%, 80% 0%);
+  shape-margin: 20%;
+  display: grid;
+  grid-template-columns: 19% auto 24%;
+  grid-template-rows: 81% 19%;
+}
+
+.tables {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
+.premierleague .beforeTab {
+  position: relative;
+}
+.premierleague h2 {
+  padding: 10px 0;
+  text-align: center;
+}
+.premierleague .plLine {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.5%;
+  bottom: 0;
+  right: 99%;
+  background: rgb(138, 72, 255);
+  background: linear-gradient(0deg, rgb(138, 72, 255) 0%, rgb(109, 111, 255) 25%, rgb(0, 240, 251) 100%);
+}
+.premierleague table {
+  background: rgb(61, 6, 73);
+  background: linear-gradient(22deg, rgb(61, 6, 73) 0%, rgb(86, 21, 125) 36%, rgb(138, 53, 234) 100%);
+  box-shadow: 0px -1px 10px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 98%;
+  -webkit-animation-name: Silde;
+          animation-name: Silde;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+.premierleague table tr {
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+.premierleague table tr:nth-child(2n) {
+  box-shadow: 10px 0px 24px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.premierleague table tr::after {
+  background: #00f0fb;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s ease all;
+}
+.premierleague table tr:hover::after {
+  top: 0%;
+}
+
+.laliga h2 {
+  padding: 10px 0;
+  text-align: center;
+}
+.laliga tbody {
+  font-family: "laliga";
+  background-color: #091d28;
+  font-weight: 100 !important;
+  position: relative;
+  z-index: 0;
+}
+.laliga tbody::after {
+  background: #103f53;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation-name: SlideDown;
+          animation-name: SlideDown;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+.laliga tr {
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+.laliga tr::after {
+  background: #103f53;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s ease all;
+}
+.laliga tr:hover::after {
+  top: 0%;
+  background-color: rgb(254, 249, 206);
+}
+.laliga tr:hover {
+  color: #103f53;
+}
+.laliga tr th,
+.laliga tr td {
+  border-bottom: 0.5px #103f53 solid;
+}
+
+@-webkit-keyframes Silde {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes Silde {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes SlideDown {
+  0% {
+    background-color: rgb(254, 249, 206);
+    top: 0%;
+  }
+  5% {
+    background-color: rgb(254, 249, 206);
+    top: 5;
+  }
+  10% {
+    background-color: rgb(254, 249, 206);
+    top: 10;
+  }
+  15% {
+    background-color: rgb(254, 249, 206);
+    top: 15;
+  }
+  20% {
+    background-color: rgb(254, 249, 206);
+    top: 20;
+  }
+  25% {
+    background-color: rgb(254, 249, 206);
+    top: 25;
+  }
+  30% {
+    background-color: rgb(254, 249, 206);
+    top: 30;
+  }
+  35% {
+    background-color: rgb(254, 249, 206);
+    top: 35;
+  }
+  40% {
+    background-color: rgb(254, 249, 206);
+    top: 40;
+  }
+  45% {
+    background-color: rgb(254, 249, 206);
+    top: 45;
+  }
+  50% {
+    background-color: rgb(254, 249, 206);
+    top: 50;
+  }
+  55% {
+    background-color: rgb(254, 249, 206);
+    top: 55;
+  }
+  60% {
+    background-color: rgb(254, 249, 206);
+    top: 60;
+  }
+  65% {
+    background-color: rgb(254, 249, 206);
+    top: 65;
+  }
+  70% {
+    background-color: rgb(254, 249, 206);
+    top: 70;
+  }
+  75% {
+    background-color: rgb(254, 249, 206);
+    top: 75;
+  }
+  80% {
+    background-color: rgb(254, 249, 206);
+    top: 80;
+  }
+  85% {
+    background-color: rgb(254, 249, 206);
+    top: 85;
+  }
+  90% {
+    background-color: rgb(254, 249, 206);
+    top: 90;
+  }
+  95% {
+    background-color: rgb(254, 249, 206);
+    top: 95;
+  }
+  100% {
+    background-color: rgb(254, 249, 206);
+    top: 100;
+  }
+}
+@keyframes SlideDown {
+  0% {
+    background-color: rgb(254, 249, 206);
+    top: 0%;
+  }
+  5% {
+    background-color: rgb(254, 249, 206);
+    top: 5;
+  }
+  10% {
+    background-color: rgb(254, 249, 206);
+    top: 10;
+  }
+  15% {
+    background-color: rgb(254, 249, 206);
+    top: 15;
+  }
+  20% {
+    background-color: rgb(254, 249, 206);
+    top: 20;
+  }
+  25% {
+    background-color: rgb(254, 249, 206);
+    top: 25;
+  }
+  30% {
+    background-color: rgb(254, 249, 206);
+    top: 30;
+  }
+  35% {
+    background-color: rgb(254, 249, 206);
+    top: 35;
+  }
+  40% {
+    background-color: rgb(254, 249, 206);
+    top: 40;
+  }
+  45% {
+    background-color: rgb(254, 249, 206);
+    top: 45;
+  }
+  50% {
+    background-color: rgb(254, 249, 206);
+    top: 50;
+  }
+  55% {
+    background-color: rgb(254, 249, 206);
+    top: 55;
+  }
+  60% {
+    background-color: rgb(254, 249, 206);
+    top: 60;
+  }
+  65% {
+    background-color: rgb(254, 249, 206);
+    top: 65;
+  }
+  70% {
+    background-color: rgb(254, 249, 206);
+    top: 70;
+  }
+  75% {
+    background-color: rgb(254, 249, 206);
+    top: 75;
+  }
+  80% {
+    background-color: rgb(254, 249, 206);
+    top: 80;
+  }
+  85% {
+    background-color: rgb(254, 249, 206);
+    top: 85;
+  }
+  90% {
+    background-color: rgb(254, 249, 206);
+    top: 90;
+  }
+  95% {
+    background-color: rgb(254, 249, 206);
+    top: 95;
+  }
+  100% {
+    background-color: rgb(254, 249, 206);
+    top: 100;
+  }
+}

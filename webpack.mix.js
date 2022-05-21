@@ -14,8 +14,9 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .react()
     .extract(['react'])
-    .postCss('resources/css/app.css', 'public/css',
-        [require('tailwindcss')]);
+    .sass('resources/css/app.scss', 'public/css')
+    .copy('resources/fonts', 'public/fonts')
+    .copy('resources/img', 'public/img');
     // .webpackConfig(require('./webpack.config'));
 
     // if (mix.inProduction()) {

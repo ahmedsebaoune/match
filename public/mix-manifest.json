@@ -2,5 +2,12 @@
     "/js/app.js": "/js/app.js",
     "/js/manifest.js": "/js/manifest.js",
     "/css/app.css": "/css/app.css",
-    "/js/vendor.js": "/js/vendor.js"
+    "/js/vendor.js": "/js/vendor.js",
+    "/fonts/Champions.ttf": "/fonts/Champions.ttf",
+    "/fonts/laliga.ttf": "/fonts/laliga.ttf",
+    "/fonts/laligaBold.ttf": "/fonts/laligaBold.ttf",
+    "/fonts/plFont.ttf": "/fonts/plFont.ttf",
+    "/img/championsleagueBack.png": "/img/championsleagueBack.png",
+    "/img/laligaBack.png": "/img/laligaBack.png",
+    "/img/premierleagueBack.jpg": "/img/premierleagueBack.jpg"
 }

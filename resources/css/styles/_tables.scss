@@ -1,0 +1,152 @@
+@use "sass:string";
+.premierleague {
+  .beforeTab {
+    position: relative;
+  }
+  h2 {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .plLine {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5%;
+    bottom: 0;
+    right: 99%;
+    background: rgb(138, 72, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(138, 72, 255, 1) 0%,
+      rgba(109, 111, 255, 1) 25%,
+      rgba(0, 240, 251, 1) 100%
+    );
+  }
+  table {
+    background: rgb(61, 6, 73);
+    background: linear-gradient(
+      22deg,
+      rgba(61, 6, 73, 1) 0%,
+      rgba(86, 21, 125, 1) 36%,
+      rgba(138, 53, 234, 1) 100%
+    );
+    box-shadow: 0px -1px 10px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 98%;
+    animation-name: Silde;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    tr {
+      position: relative;
+      z-index: 0;
+      cursor: pointer;
+      &:nth-child(2n) {
+        box-shadow: 10px 0px 24px 0px rgba(0, 0, 0, 0.25) inset;
+      }
+      &::after {
+        background: $cryan;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.3s ease all;
+      }
+
+      &:hover::after {
+        top: 0%;
+      }
+    }
+  }
+}
+
+.laliga {
+  h2 {
+    padding: 10px 0;
+    text-align: center;
+  }
+  tbody {
+    font-family: "laliga";
+    background-color: #091d28;
+    font-weight: 100 !important;
+    position: relative;
+    z-index: 0;
+    &::after {
+      background: #103f53;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      animation-name: SlideDown;
+      animation-duration: 4s;
+      animation-fill-mode: backwards;
+    }
+  }
+  tr {
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    transition: 0.3s ease all;
+
+    &::after {
+      background: #103f53;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.3s ease all;
+    }
+
+    &:hover::after {
+      top: 0%;
+      background-color: rgb(254, 249, 206);
+    }
+    &:hover {
+      color: #103f53;
+    }
+    th,
+    td {
+      border-bottom: 0.5px #103f53 solid;
+    }
+  }
+}
+
+@keyframes Silde {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideDown {
+  0% {
+    background-color: rgb(254, 249, 206);
+    top: 0%;
+  }
+  @for $i from 1 through 20 {
+    #{$i*5 + "%"} {
+      background-color: rgb(254, 249, 206);
+      top: #{$i * 5};
+    }
+  }
+}
+//100% {
+//   background-color: #091d28;
+//   top: 0%;
+//   // top: 100%;
+//   // left: 0;
+//   // right: 0;
+//   // bottom: 0;
+// }
