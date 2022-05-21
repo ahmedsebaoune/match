@@ -4926,34 +4926,40 @@ var GroupeTable = function GroupeTable(_ref) {
     className: "groups ".concat(league.toLowerCase().split(" ").join(""), " ").concat(show === i ? "show" : "hide"),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
       children: league
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.Splide, {
-      hasTrack: false,
-      options: {
-        direction: "ttb",
-        height: "0px",
-        perPage: 2,
-        autoplay: false
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "groupsTable",
+      style: {
+        padding: "20px"
       },
-      children: Object.entries(table).map(function (group) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.SplideTrack, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.SplideSlide, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("caption", {
-                children: ["Groupe ", group[0]]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
-                children: group[1].map(function (club, pos) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
-                      children: pos + 1
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                      children: club
-                    })]
-                  });
-                })
-              })]
-            })
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.Splide, {
+        hasTrack: false,
+        options: {
+          direction: "ttb",
+          height: '90vh',
+          perPage: 4,
+          autoplay: false
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.SplideTrack, {
+          children: Object.entries(table).map(function (group) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_0__.SplideSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("caption", {
+                  children: ["Groupe ", group[0]]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+                  children: group[1].map(function (club, pos) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+                        children: pos + 1
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                        children: club
+                      })]
+                    });
+                  })
+                })]
+              })
+            });
           })
-        });
+        })
       })
     })]
   });
@@ -5125,7 +5131,8 @@ function AppLayout(_ref) {
             rewind: true,
             width: 1000,
             gap: '2rem',
-            autoplay: false
+            autoplay: false,
+            pagination: false
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideTrack, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideSlide, {
@@ -5187,7 +5194,11 @@ var ChampionsLeague = function ChampionsLeague() {
       A: ["FC BARCELONA", "BAYERN MUNCHEN", "BENFICA", "DYNAMO KYIV"],
       B: ["REAL MADRID", "SHERIFF", "INTER MILAN", "SHAKHTAR DONETSK"],
       C: ["PSG", "MANCHESTER CITY", "RB LEIBZIG", "CLUB BRUGGE"],
-      D: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"] // E: {},
+      D: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"],
+      E: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"],
+      F: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"],
+      G: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"],
+      H: ["LIVERPOOL", "MILAN", "ATLETICO MADRID", "PORTO"] // E: {},
       // F: {},
       // G: {},
       // H: {},

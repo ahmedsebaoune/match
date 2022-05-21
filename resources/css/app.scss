@@ -58,9 +58,10 @@ $font-path : "../fonts";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     .beforeTab{
         width:80%;
+        height: 90vh;
+
     }
   table {
     border-collapse: collapse;

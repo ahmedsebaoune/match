@@ -52,10 +52,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .table .beforeTab {
   width: 80%;
+  height: 90vh;
 }
 .table table {
   border-collapse: collapse;
@@ -124,6 +124,10 @@
   background-size: cover;
   font-size: 18px;
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 .groups h2 {
@@ -131,7 +135,7 @@
 }
 .groups table {
   background-color: rgba(4, 10, 45, 0.4);
-  width: 80%;
+  width: 100%;
   height: 15vh;
 }
 .groups table caption {
@@ -154,6 +158,11 @@
 .groups table th,
 .groups table td {
   padding: 5px 0;
+}
+
+.groupsTable {
+  width: 80%;
+  height: 90vh;
 }
 
 .container {

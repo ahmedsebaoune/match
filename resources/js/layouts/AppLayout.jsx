@@ -52,7 +52,8 @@ export default function AppLayout({children}) {
                             rewind: true,
                             width: 1000,
                             gap: '2rem',
-                            autoplay:false
+                            autoplay:false,
+                            pagination:false,
                         }}>
                         <SplideTrack>
                             <SplideSlide>
