@@ -3,11 +3,16 @@
     "/js/manifest.js": "/js/manifest.js",
     "/css/app.css": "/css/app.css",
     "/js/vendor.js": "/js/vendor.js",
-    "/fonts/Champions.ttf": "/fonts/Champions.ttf",
+    "/fonts/champions-bold-webfont.woff": "/fonts/champions-bold-webfont.woff",
+    "/fonts/champions-light-webfont.woff": "/fonts/champions-light-webfont.woff",
+    "/fonts/champions-regular-webfont.woff": "/fonts/champions-regular-webfont.woff",
     "/fonts/laliga.ttf": "/fonts/laliga.ttf",
     "/fonts/laligaBold.ttf": "/fonts/laligaBold.ttf",
-    "/fonts/plFont.ttf": "/fonts/plFont.ttf",
+    "/fonts/PremierLeagueW01-Bold.woff": "/fonts/PremierLeagueW01-Bold.woff",
+    "/fonts/PremierLeagueW01-Light.woff": "/fonts/PremierLeagueW01-Light.woff",
+    "/fonts/PremierLeagueW01-Regular.woff": "/fonts/PremierLeagueW01-Regular.woff",
     "/img/championsleagueBack.png": "/img/championsleagueBack.png",
+    "/img/championsLogo.png": "/img/championsLogo.png",
     "/img/laligaBack.png": "/img/laligaBack.png",
     "/img/premierleagueBack.jpg": "/img/premierleagueBack.jpg"
 }

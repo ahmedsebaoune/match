@@ -4969,6 +4969,369 @@ var GroupeTable = function GroupeTable(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/matchesPerDay.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/matchesPerDay.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _matches_championsMatch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./matches/championsMatch */ "./resources/js/components/matches/championsMatch.jsx");
+/* harmony import */ var _tables_laLiga__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tables/laLiga */ "./resources/js/tables/laLiga.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var MatchesPerDay = function MatchesPerDay(props) {
+  var appearLeague = function appearLeague() {
+    switch (props.league) {
+      case 'LaLiga':
+        return console.log(props.matches.forEach(function (match) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tables_laLiga__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            homeName: match.homeName,
+            awayName: match.awayName,
+            status: match.status,
+            utcDate: match.utcDate
+          });
+        }));
+        break;
+
+      case 'PL':
+        return props.matches.forEach(function (match) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(PlMatch, {
+            homeName: match.homeName,
+            awayName: match.awayName,
+            status: match.status,
+            utcDate: match.utcDate
+          });
+        });
+        break;
+
+      case 'Champions':
+        return props.matches.forEach(function (match) {
+          /*#__PURE__*/
+          (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_matches_championsMatch__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            homeName: match.homeName,
+            awayName: match.awayName,
+            status: match.status,
+            utcDate: match.utcDate
+          });
+        });
+      // code
+    }
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "matches_per_day",
+    children: appearLeague()
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MatchesPerDay);
+
+/***/ }),
+
+/***/ "./resources/js/components/matchesTab.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/matchesTab.jsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
+/* harmony import */ var _matches_championsMatch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./matches/championsMatch */ "./resources/js/components/matches/championsMatch.jsx");
+/* harmony import */ var _matches_plMatch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./matches/plMatch */ "./resources/js/components/matches/plMatch.jsx");
+/* harmony import */ var _matches_laLigaMatch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./matches/laLigaMatch */ "./resources/js/components/matches/laLigaMatch.jsx");
+/* harmony import */ var _matchesPerDay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./matchesPerDay */ "./resources/js/components/matchesPerDay.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+var MatchesTab = function MatchesTab() {
+  var matches = [{
+    "id": 'LaLiga',
+    "league": 2014,
+    "utcDate": "20/5/2022 19:00:00",
+    "status": "SCHEDULED",
+    'homeName': "MUN",
+    'awayName': "RM"
+  }, {
+    "id": 'LaLiga',
+    "league": 'LaLiga',
+    "utcDate": "20/5/2022 19:00:00",
+    "status": "SCHEDULED",
+    'homeName': "MUN",
+    'awayName': "RM"
+  }, {
+    "id": 'LaLiga',
+    "league": 2014,
+    "utcDate": "20/5/2022 19:00:00",
+    "status": "SCHEDULED",
+    'homeName': "MUN",
+    'awayName': "RM"
+  }, {
+    "id": 'LaLiga',
+    "league": 2014,
+    "utcDate": "20/5/2022 19:00:00",
+    "status": "SCHEDULED",
+    'homeName': "MUN",
+    'awayName': "RM"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    className: "matchesTab",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__.Splide, {
+      hasTrack: false,
+      className: "matchContainer",
+      options: {
+        rewind: true,
+        gap: '2rem',
+        autoplay: false,
+        pagination: false,
+        perPage: 1
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__.SplideTrack, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__.SplideSlide, {
+          className: "championsTab center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "matchList",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_matchesPerDay__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              league: "LaLiga",
+              matches: matches
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__.SplideSlide, {
+          className: "laligaTab",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            children: "cha3ra wndir avc"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_1__.SplideSlide, {
+          className: "pltab",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            children: "ya ma w dawha fel mercedes"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "splide__arrows",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+          className: "splide__arrow splide__arrow--prev",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+            className: "fa fa-caret-right",
+            "aria-hidden": "true"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+          className: "splide__arrow splide__arrow--next",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+            className: "fa fa-caret-right"
+          })
+        })]
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MatchesTab);
+
+/***/ }),
+
+/***/ "./resources/js/components/matches/championsMatch.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/components/matches/championsMatch.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var ChampionsMatch = function ChampionsMatch(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "championsMatch center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "time",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        className: "championsColor",
+        src: "../../img/championsLogo.png",
+        alt: ""
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        children: props.status == 'SCHEDULED' ? props.utcDate : props.status
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "scoreMatch",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "teamDetailLeft",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "nameHome",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: props.homeName
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "score",
+          children: props.homeScore
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "teamDetailRight",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "score",
+          children: props.awayScore
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "nameAway",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: props.awayName
+          })
+        })]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChampionsMatch);
+
+/***/ }),
+
+/***/ "./resources/js/components/matches/laLigaMatch.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/matches/laLigaMatch.jsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var LaLigaMatch = function LaLigaMatch(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "liga-match",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "score",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        className: "nameHome",
+        children: props.homeName
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        className: "ScoreHome",
+        children: props.homeScore
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        children: "-"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        className: "scoreAway",
+        children: props.awayScore
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+        className: "nameAway",
+        children: props.awayName
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "time",
+      children: props.status == 'SCHEDULED' ? props.utcDate : props.status
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LaLigaMatch);
+
+/***/ }),
+
+/***/ "./resources/js/components/matches/plMatch.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/matches/plMatch.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var PlMatch = function PlMatch(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    "class": "pl-match",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      "class": "team home",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        "class": "color"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        "class": "name",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+          children: props.homeName
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      "class": "goals",
+      style: props.status == 'SCHEDULED' ? {
+        width: "30px"
+      } : {},
+      children: props.status == 'SCHEDULED' ? '' : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "goal home",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+            children: props.homeScore
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "divider",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+            children: "-"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "goal away",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+            children: props.awayScore
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      "class": "time",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+          "class": "minute",
+          children: props.status == 'SCHEDULED' ? props.utcDate : props.status
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      "class": "team away",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        "class": "color"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        "class": "name",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
+          children: props.awayName
+        })
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PlMatch);
+
+/***/ }),
+
 /***/ "./resources/js/components/table.js":
 /*!******************************************!*\
   !*** ./resources/js/components/table.js ***!
@@ -5039,15 +5402,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_table__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/table */ "./resources/js/components/table.js");
 /* harmony import */ var _components_groupeTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/groupeTable */ "./resources/js/components/groupeTable.js");
-/* harmony import */ var _img_championsleagueBack_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../img/championsleagueBack.png */ "./resources/img/championsleagueBack.png");
-/* harmony import */ var _img_premierleagueBack_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../img/premierleagueBack.jpg */ "./resources/img/premierleagueBack.jpg");
-/* harmony import */ var _img_laligaBack_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../img/laligaBack.png */ "./resources/img/laligaBack.png");
-/* harmony import */ var _tables_premierLeague__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tables/premierLeague */ "./resources/js/tables/premierLeague.js");
-/* harmony import */ var _tables_laLiga__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../tables/laLiga */ "./resources/js/tables/laLiga.js");
-/* harmony import */ var _tables_championsLeague__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tables/championsLeague */ "./resources/js/tables/championsLeague.js");
-/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
-/* harmony import */ var _splidejs_react_splide_css_skyblue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @splidejs/react-splide/css/skyblue */ "./node_modules/@splidejs/react-splide/dist/css/themes/splide-skyblue.min.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_matchesTab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/matchesTab */ "./resources/js/components/matchesTab.jsx");
+/* harmony import */ var _img_championsleagueBack_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../img/championsleagueBack.png */ "./resources/img/championsleagueBack.png");
+/* harmony import */ var _img_premierleagueBack_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../img/premierleagueBack.jpg */ "./resources/img/premierleagueBack.jpg");
+/* harmony import */ var _img_laligaBack_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../img/laligaBack.png */ "./resources/img/laligaBack.png");
+/* harmony import */ var _tables_premierLeague__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../tables/premierLeague */ "./resources/js/tables/premierLeague.js");
+/* harmony import */ var _tables_laLiga__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tables/laLiga */ "./resources/js/tables/laLiga.js");
+/* harmony import */ var _tables_championsLeague__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../tables/championsLeague */ "./resources/js/tables/championsLeague.js");
+/* harmony import */ var _splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @splidejs/react-splide */ "./node_modules/@splidejs/react-splide/dist/js/react-splide.esm.js");
+/* harmony import */ var _splidejs_react_splide_css_skyblue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @splidejs/react-splide/css/skyblue */ "./node_modules/@splidejs/react-splide/dist/css/themes/splide-skyblue.min.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5059,6 +5423,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -5078,19 +5443,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function AppLayout(_ref) {
   var children = _ref.children;
 
-  var _PremierLeague = (0,_tables_premierLeague__WEBPACK_IMPORTED_MODULE_7__["default"])(),
+  var _PremierLeague = (0,_tables_premierLeague__WEBPACK_IMPORTED_MODULE_8__["default"])(),
       pl = _PremierLeague.name,
       plTable = _PremierLeague.table;
 
-  var _LaLiga = (0,_tables_laLiga__WEBPACK_IMPORTED_MODULE_8__["default"])(),
+  var _LaLiga = (0,_tables_laLiga__WEBPACK_IMPORTED_MODULE_9__["default"])(),
       liga = _LaLiga.name,
       ligaTable = _LaLiga.table;
 
-  var _ChampionsLeague = (0,_tables_championsLeague__WEBPACK_IMPORTED_MODULE_9__["default"])(),
+  var _ChampionsLeague = (0,_tables_championsLeague__WEBPACK_IMPORTED_MODULE_10__["default"])(),
       ChName = _ChampionsLeague.name,
       ChTable = _ChampionsLeague.table;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([_img_premierleagueBack_jpg__WEBPACK_IMPORTED_MODULE_5__["default"], _img_laligaBack_png__WEBPACK_IMPORTED_MODULE_6__["default"], _img_championsleagueBack_png__WEBPACK_IMPORTED_MODULE_4__["default"]]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([_img_premierleagueBack_jpg__WEBPACK_IMPORTED_MODULE_6__["default"], _img_laligaBack_png__WEBPACK_IMPORTED_MODULE_7__["default"], _img_championsleagueBack_png__WEBPACK_IMPORTED_MODULE_5__["default"]]),
       _useState2 = _slicedToArray(_useState, 2),
       back = _useState2[0],
       setBack = _useState2[1];
@@ -5116,16 +5481,16 @@ function AppLayout(_ref) {
       return clearInterval(interval);
     };
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
     className: "App",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
       className: "container",
       style: {
         background: "url(".concat(back[show - 1], ")")
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "tables",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.Splide, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__.Splide, {
           hasTrack: false,
           options: {
             rewind: true,
@@ -5134,39 +5499,39 @@ function AppLayout(_ref) {
             autoplay: false,
             pagination: false
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideTrack, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideSlide, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_table__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__.SplideTrack, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__.SplideSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_table__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 league: liga,
                 table: ligaTable,
                 show: show,
                 i: 2
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideSlide, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_table__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__.SplideSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_table__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 league: pl,
                 table: plTable,
                 show: show,
                 i: 1
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_10__.SplideSlide, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_groupeTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_splidejs_react_splide__WEBPACK_IMPORTED_MODULE_11__.SplideSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_groupeTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 league: ChName,
                 table: ChTable,
                 show: show,
                 i: 3
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
             className: "splide__arrows"
           })]
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_matchesTab__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
       className: "cont"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
       className: "inner",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "content",
         children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut beatae cupiditate ea facilis libero maxime reprehenderit voluptate. Ipsam, natus, voluptates. Culpa modi nisi non nulla, officia omnis rem veniam."
       })

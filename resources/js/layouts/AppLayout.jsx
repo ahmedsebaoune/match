@@ -2,6 +2,7 @@ import {InertiaLink, usePage} from "@inertiajs/inertia-react"
 import {useState, useEffect} from 'react'
 import Table from "../components/table";
 import GroupeTable from "../components/groupeTable";
+import MatchesTab from "../components/matchesTab";
 
 import championsleagueBack from "../../img/championsleagueBack.png";
 import premierleagueBack from "../../img/premierleagueBack.jpg";
@@ -52,8 +53,8 @@ export default function AppLayout({children}) {
                             rewind: true,
                             width: 1000,
                             gap: '2rem',
-                            autoplay:false,
-                            pagination:false,
+                            autoplay: false,
+                            pagination: false,
                         }}>
                         <SplideTrack>
                             <SplideSlide>
@@ -70,6 +71,7 @@ export default function AppLayout({children}) {
 
                     </Splide>
                 </div>
+                <MatchesTab/>
             </div>
             <div className="cont">
             </div>

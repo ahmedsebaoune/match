@@ -1,51 +1,59 @@
 .groups {
-  font-family: "champions";
-  background-position: top;
-  background-size: cover;
-  font-size: 18px;
-  letter-spacing: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  h2 {
-    height: 20px;
-  }
-  table {
-    background-color: rgba(4, 10, 45, 0.4);
-    width: 100%;
-    height: 15vh;
-    caption {
-      text-align: start;
-      padding: 1%;
+    font-family: "champions";
+    background-position: top;
+    background-size: cover;
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    h2 {
+        height: 20px;
+        font-weight: bold;
     }
-    tbody {
-      position: relative;
+
+    table {
+        background-color: rgba(4, 10, 45, 0.4);
+        width: 100%;
+        height: 15vh;
+
+        caption {
+            text-align: start;
+            padding: 1%;
+            font-weight: 700;
+        }
+
+        tbody {
+            position: relative;
+        }
+
+        tbody::before {
+            content: "";
+            position: absolute;
+            top: -2%;
+            left: 0%;
+            bottom: 100%;
+            right: 0%;
+            background: rgb(19, 42, 210);
+            background: linear-gradient(
+                    90deg,
+                    rgba(19, 42, 210, 1) 0%,
+                    rgba(72, 163, 246, 1) 51%,
+                    rgba(129, 242, 255, 1) 100%
+            );
+        }
+
+        th,
+        td {
+            padding: 5px 0;
+        }
     }
-    tbody::before {
-      content: "";
-      position: absolute;
-      top: -2%;
-      left: 0%;
-      bottom: 100%;
-      right: 0%;
-      background: rgb(19, 42, 210);
-      background: linear-gradient(
-        90deg,
-        rgba(19, 42, 210, 1) 0%,
-        rgba(72, 163, 246, 1) 51%,
-        rgba(129, 242, 255, 1) 100%
-      );
-    }
-    th,
-    td {
-      padding: 5px 0;
-    }
-  }
 }
 
-.groupsTable{
+.groupsTable {
     width: 80%;
     height: 90vh;
 }

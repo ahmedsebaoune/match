@@ -27,6 +27,7 @@
         "tailwindcss": "^2.0.1"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.1.1",
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-react": "^0.8.0",
         "@splidejs/react-splide": "^0.7.5"

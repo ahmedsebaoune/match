@@ -1,10 +1,13 @@
 @use "sass:string";
 .premierleague {
+    font-family: "PremierSans-Regular";
   .beforeTab {
     position: relative;
   }
   h2 {
-    padding: 10px 0;
+      font-family: "PremierSans-bold";
+
+      padding: 10px 0;
     text-align: center;
   }
   .plLine {
@@ -66,7 +69,9 @@
 
 .laliga {
   h2 {
-    padding: 10px 0;
+      font-family: "laligaBold";
+
+      padding: 10px 0;
     text-align: center;
   }
   tbody {

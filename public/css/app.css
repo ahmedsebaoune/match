@@ -1,10 +1,32 @@
 @font-face {
-  font-family: "pl";
-  src: url(/fonts/plFont.ttf?68fee4744fa9cb92c7a93f1879ab5962);
+  font-family: PremierSans-Light;
+  src: url(/fonts/PremierLeagueW01-light.woff?cf10a370f0cf1b01d1a14590a649721d);
+}
+@font-face {
+  font-family: PremierSans-Regular;
+  src: url(/fonts/PremierLeagueW01-Regular.woff?51b559f97ddcbe2aa1e5a4469c4e9827);
+}
+@font-face {
+  font-family: PremierSans-Bold;
+  src: url(/fonts/PremierLeagueW01-Bold.woff?e07e8ec7a779a8f4cdc0d98f07fc8a99);
 }
 @font-face {
   font-family: "champions";
-  src: url(/fonts/Champions.ttf?57b7551df03a20bed65e6413ea115b35);
+  src: url(/fonts/champions-bold-webfont.woff?10b9865f9d1f491fec882ee8758058a6) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "champions";
+  src: url(/fonts/champions-light-webfont.woff?3e87642c51a196cc349c038894e8db83);
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "champions";
+  src: url(/fonts/champions-regular-webfont.woff?40032bdb75dd1069898359275221a0d3);
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "laligaBold";
@@ -118,6 +140,25 @@
     transform: translateX(120%);
   }
 }
+.plTab {
+  font-family: PremierSans-Light;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.laligaTap {
+  font-family: laliga;
+}
+
+.championsTab {
+  font-family: champions;
+}
+
 .groups {
   font-family: "champions";
   background-position: top;
@@ -132,6 +173,7 @@
 }
 .groups h2 {
   height: 20px;
+  font-weight: bold;
 }
 .groups table {
   background-color: rgba(4, 10, 45, 0.4);
@@ -141,6 +183,7 @@
 .groups table caption {
   text-align: start;
   padding: 1%;
+  font-weight: 700;
 }
 .groups table tbody {
   position: relative;
@@ -190,10 +233,14 @@
   width: 100%;
 }
 
+.premierleague {
+  font-family: "PremierSans-Regular";
+}
 .premierleague .beforeTab {
   position: relative;
 }
 .premierleague h2 {
+  font-family: "PremierSans-bold";
   padding: 10px 0;
   text-align: center;
 }
@@ -247,6 +294,7 @@
 }
 
 .laliga h2 {
+  font-family: "laligaBold";
   padding: 10px 0;
   text-align: center;
 }
@@ -490,4 +538,329 @@
     background-color: rgb(254, 249, 206);
     top: 100;
   }
+}
+.matchesTab {
+  width: 100%;
+  background: red;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matchesTab .splide__arrows {
+  margin: 10px;
+}
+.matchesTab .splide__arrows .splide__arrow--next {
+  right: 0;
+}
+.matchesTab .splide__arrows .splide__arrow--prev {
+  left: 0;
+}
+.matchesTab .matchList {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+.matchesTab .matchContainer {
+  width: 105%;
+}
+.matchesTab .championsMatch {
+  box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+  -webkit-box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+  width: 80%;
+  display: grid;
+  grid-template-columns: 34% 66%;
+  height: 35px;
+  grid-template-rows: 100%;
+}
+.matchesTab .championsMatch .time, .matchesTab .championsMatch .pl-match .extra-time, .matchesTab .pl-match .championsMatch .extra-time {
+  height: 35px;
+  position: relative;
+  background: white;
+  color: #00004b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matchesTab .championsMatch .time span, .matchesTab .championsMatch .pl-match .extra-time span, .matchesTab .pl-match .championsMatch .extra-time span {
+  padding: 0 4px;
+  padding-bottom: 3.5px;
+  font-size: 1.4vw;
+  line-height: 1.4vw;
+}
+.matchesTab .championsMatch .time img, .matchesTab .championsMatch .pl-match .extra-time img, .matchesTab .pl-match .championsMatch .extra-time img {
+  width: 1.3vw;
+}
+.matchesTab .championsMatch .scoreMatch {
+  position: relative;
+  border-width: 4px;
+  -o-border-image: linear-gradient(90deg, rgb(28, 85, 232) 0%, rgb(89, 231, 206) 100%);
+     border-image: linear-gradient(90deg, rgb(28, 85, 232) 0%, rgb(89, 231, 206) 100%);
+  font-size: 1.4vw;
+  line-height: 1.4vw;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #1a2f67;
+}
+.matchesTab .championsMatch .scoreMatch:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 96%;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #1c55e8, #59e7ce);
+}
+.matchesTab .championsMatch .scoreMatch .score {
+  padding-bottom: 3.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailLeft {
+  border-left: 3px #0d3aff solid;
+  display: grid;
+  grid-template-columns: 78% 22%;
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailLeft .nameHome {
+  padding: 0px 6px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #0d3aff;
+  -webkit-clip-path: polygon(80% 0, 100% 38%, 82% 100%, 0 100%, 0 0);
+          clip-path: polygon(80% 0, 100% 38%, 82% 100%, 0 100%, 0 0);
+  shape-outside: polygon(80% 0, 100% 38%, 82% 100%, 0 100%, 0 0);
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailLeft .nameHome:after {
+  position: absolute;
+  background: rgb(52, 60, 141);
+  background: linear-gradient(90deg, rgb(52, 60, 141) 0%, rgb(61, 96, 251) 100%);
+  content: "";
+  right: 6px;
+  z-index: -1;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  -webkit-clip-path: polygon(80% 0, 100% 38%, 82% 100%, 0 100%, 0 0);
+          clip-path: polygon(80% 0, 100% 38%, 82% 100%, 0 100%, 0 0);
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailLeft .nameHome p {
+  padding-bottom: 3.5px;
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailLeft .score:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 95%;
+  right: 0;
+  background: rgb(26, 47, 106);
+  background: linear-gradient(0deg, rgb(26, 47, 106) 0%, rgb(21, 62, 216) 50%, rgb(26, 47, 106) 100%);
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailRight {
+  border-right: 3px #0d3aff solid;
+  display: grid;
+  grid-template-columns: 22% 78%;
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailRight .nameAway {
+  padding: 0px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  background: #0d3aff;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 18% 100%, 0 38%, 20% 0);
+          clip-path: polygon(100% 0, 100% 100%, 18% 100%, 0 38%, 20% 0);
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailRight .nameAway:after {
+  position: absolute;
+  background: rgb(52, 60, 141);
+  background: linear-gradient(270deg, rgb(52, 60, 141) 0%, rgb(61, 96, 251) 100%);
+  content: "";
+  right: 0px;
+  z-index: -1;
+  left: 6px;
+  top: 0px;
+  bottom: 0px;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 18% 100%, 0 38%, 20% 0);
+          clip-path: polygon(100% 0, 100% 100%, 18% 100%, 0 38%, 20% 0);
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailRight .nameAway p {
+  padding-bottom: 3.5px;
+}
+.matchesTab .championsMatch .scoreMatch .teamDetailRight .score:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  right: 95%;
+  background: rgb(26, 47, 106);
+  background: linear-gradient(0deg, rgb(26, 47, 106) 0%, rgb(21, 62, 216) 50%, rgb(26, 47, 106) 100%);
+}
+.matchesTab .pl-match {
+  font-family: PremierSans-Regular;
+  position: relative;
+  display: flex;
+  -webkit-animation: showScoreboard 2s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  animation: showScoreboard 2s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  padding-bottom: 3px;
+}
+.matchesTab .pl-match .team {
+  position: relative;
+  width: 102px;
+  height: 38px;
+  background-color: #34003a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.matchesTab .pl-match .team .color {
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  top: 0;
+}
+.matchesTab .pl-match .team .name {
+  color: #fff;
+  font-size: 1.6em;
+  top: -1px;
+  position: relative;
+}
+.matchesTab .pl-match .team.home .color {
+  left: 0;
+  background-color: #C8102E;
+}
+.matchesTab .pl-match .team.away .color {
+  right: 0;
+  background-color: #1B449C;
+}
+.matchesTab .pl-match .logo {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+.matchesTab .pl-match .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.matchesTab .pl-match .goals {
+  width: 102px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00fc8a;
+  color: #34003a;
+  font-size: 1.6em;
+  font-weight: 700;
+  z-index: 2;
+}
+.matchesTab .pl-match .goals .goal,
+.matchesTab .pl-match .goals .divider {
+  position: relative;
+  top: -1px;
+}
+.matchesTab .pl-match .goals .divider {
+  margin: 0 2px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+.matchesTab .pl-match .time, .matchesTab .pl-match .extra-time {
+  position: absolute;
+  background-color: #fff;
+  width: 102px;
+  height: 38px;
+  top: 38px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  color: #34003a;
+  font-weight: 700;
+  z-index: 2;
+}
+.matchesTab .pl-match .extra-time {
+  width: 51px;
+  left: calc(50% + 102px - 26px);
+  z-index: 1;
+  opacity: 0;
+  -webkit-animation: showExtratime 1.2s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  animation: showExtratime 1.2s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+.matchesTab .liga-match {
+  font-family: laliga;
+  width: 80%;
+  display: grid;
+  height: 35px;
+  grid-template-columns: 70% 30%;
+  box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+  -webkit-box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 1px 1px 15px -4px rgba(0, 0, 0, 0.48);
+}
+.matchesTab .liga-match .time, .matchesTab .liga-match .pl-match .extra-time, .matchesTab .pl-match .liga-match .extra-time {
+  color: black;
+  font-size: 1.4vw;
+  text-align: center;
+  align-items: center;
+  background: white;
+  -webkit-clip-path: polygon(11% 0%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(11% 0%, 100% 0, 100% 100%, 0% 100%);
+  margin-left: -8px;
+}
+.matchesTab .liga-match .score {
+  font-size: 1.4vw;
+  display: grid;
+  grid-template-columns: 38% 10% 2% 10% 38%;
+  justify-items: center;
+  align-items: center;
+  z-index: 99;
+  position: relative;
+  background: white;
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.matchesTab .liga-match .score:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 50%;
+  left: 0;
+  width: 100%;
+  background: rgb(73, 77, 97);
+  background: linear-gradient(145deg, rgb(73, 77, 97) 0%, rgb(60, 140, 170) 100%);
+}
+.matchesTab .liga-match .score:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(66, 69, 87);
+  background: linear-gradient(45deg, rgb(60, 62, 79) 0%, rgb(57, 126, 155) 100%);
 }
