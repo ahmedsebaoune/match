@@ -20,6 +20,7 @@ class CreateCompetitionsTable extends Migration
             $table->string('id_country')->nullable();
             $table->string('logo_country')->nullable();
             $table->string('logo')->nullable();
+            $table->string('currentMatchday')->nullable();
             $table->timestamps();
         });
     }

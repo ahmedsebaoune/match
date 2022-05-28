@@ -14,7 +14,8 @@ class Competition extends Model
         'name_country',
         'id_country',
         'logo_country',
-        'logo'
+        'logo',
+        'currentMatchday'
     ];
     use HasFactory;
 }
