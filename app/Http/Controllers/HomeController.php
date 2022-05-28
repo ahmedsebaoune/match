@@ -6,6 +6,7 @@ use App\Models\Competition;
 use App\Models\CurrentMatch;
 use App\Models\Game;
 use App\Models\Group;
+use App\Models\Stage;
 use App\Models\Standing;
 use App\Models\team;
 use Carbon\Carbon;
@@ -282,21 +283,25 @@ class HomeController extends Controller
     public function CurrentMatchesRange()
     {
         $currentStage = Game::where('utcDate','>=',Carbon::today())->orderBy('utcDate','asc')->limit(1)->get()[0]->stage;
-        dd($currentStage);
+        $currentStage = Stage::where('stage','FINAL')->first();
+        $stages = Stage::where( 'id',$currentStage->id)->orWhere('id',$currentStage->id-1)->get();
         $matches = collect([]);
         foreach ($this->ActiveCompetitions as $cmp) {
             $cmpIns = Competition::find($cmp);
             $matches->put(
                 $cmpIns->name,
-                Game::where('competition_id', $cmp)->where(function ($query) use ($cmp, $cmpIns) {
+                Game::where('competition_id', $cmp)->where(function ($query) use ($cmp, $cmpIns,$stages) {
                     $query->where('stage', '=', 'REGULAR_SEASON')
                         ->where(function ($query) use ($cmpIns) {
                             $query->where('matchday', $cmpIns->currentMatchday)
                                 ->orWhere('matchday', $cmpIns->currentMatchday - 1);
                         });
-                    $query->orWhere(function ($query) {
+                    $query->orWhere(function ($query) use($stages) {
                         $query->where('stage', '<>', 'REGULAR_SEASON')
-                            ->where('stage', '=', 'FINAL');
+                            ->where(function($query) use($stages){
+                                $query->where('stage', '=',$stages[0]->stage)
+                                    ->orWhere('stage', '=',$stages[1]->stage);
+                            });
                     });
                 })->get());
         }
