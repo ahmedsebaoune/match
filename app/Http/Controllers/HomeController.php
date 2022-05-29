@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Http;
 
@@ -27,18 +28,21 @@ class HomeController extends Controller
     //
     public function show()
     {
-        dd($this->CurrentMatchesRange());
-        return Inertia::render('Home', [
-            "response" => Competition::get()->toJson(),
+        return Inertia::render('Home',[
+            'aboutPage' => URL::route('guest.aboutPage'),
+        ]);
+    }    public function about()
+    {
+        return Inertia::render('About',[
+            'aboutPage' => URL::route('guest.aboutPage'),
         ]);
     }
 
     public function queryCompetetion()
     {
 
-        return Inertia::render('Home', [
-            "response" => Standing::get()->toJson(),
-        ]);
+        return Inertia::render('Home'
+            );
     }
 
     private function competitionFromApi()
@@ -305,7 +309,7 @@ class HomeController extends Controller
                     });
                 })->get());
         }
-        return $matches->first();
+        return $matches;
     }
 
 

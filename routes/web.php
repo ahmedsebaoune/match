@@ -16,3 +16,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'show']);
 Route::get('/Query/Competitions',[HomeController::class,'queryCompetetion']);
+Route::get('/About',[HomeController::class,'queryCompetetion'])->name('guest.aboutPage');

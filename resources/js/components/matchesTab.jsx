@@ -4,7 +4,7 @@ import ChampionsMatch from './matches/championsMatch';
 import PlMatch from './matches/plMatch';
 import LaLigaMatch from './matches/laLigaMatch';
 import MatchesPerDay from './matchesPerDay';
-const MatchesTab = () => {
+const MatchesTab = (props) => {
     const matches = [
         {
             "id": 'LaLiga',
@@ -60,6 +60,7 @@ const MatchesTab = () => {
                                 league="LaLiga"
                                 matches={matches}
                             />
+                            {props.children}
                             {/*<ChampionsMatch*/}
                             {/*    homeName="MUN"*/}
                             {/*    awayName="RM"*/}

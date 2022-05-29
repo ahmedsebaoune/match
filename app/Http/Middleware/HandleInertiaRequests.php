@@ -3,7 +3,9 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 use Inertia\Middleware;
+use App\Http\Controllers\HomeController;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -36,8 +38,10 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $hc = new HomeController();
         return array_merge(parent::share($request), [
-            //
+            'appName' => config('app.name'),
+            "currentMatches" => function () use($hc) { return $hc->CurrentMatchesRange()->toJson(); }
         ]);
     }
 }
